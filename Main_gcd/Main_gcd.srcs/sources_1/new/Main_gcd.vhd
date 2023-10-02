@@ -45,7 +45,7 @@ end Main_gcd;
 architecture Behavioral of Main_gcd is
 signal btnd: STD_LOGIC_VECTOR (3 downto 0);
 signal clk190,clkM25,go1,xin,yin,clr: STD_LOGIC;
-signal gcd_7seg: STD_LOGIC_VECTOR(15 downto 0);
+signal gcd_7seg: STD_LOGIC_VECTOR(15 downto 0):= "0000000000000000";
 signal count_1: std_logic_vector(17 downto 0);
 
 begin
@@ -92,7 +92,7 @@ U3: entity work.gcd port map(
 U4: entity work.disp7 port map(
     cclk => mclk,
     clr => clr,
-    x =>gcd_7seg,
+    x => gcd_7seg,
     an => AN,
     a_to_g =>A_to_G
     );
